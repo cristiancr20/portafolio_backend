@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 //crear usuario
 exports.createUser = async (req, res) => {
     try {
-        const { name, enpmail, password, role } = req.body;
+        const { name, email, password, role } = req.body;
         const newUser = new usuario({ name, email, password, role });
         await newUser.save();
         return res.status(201).json({ message: 'Usuario creado correctamente' });
